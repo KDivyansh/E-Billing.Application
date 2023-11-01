@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    Author: Divyansh Katare-->
+<!--    Github: https://github.com/KDivyansh-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="GST E-Bill"
+        android:supportsRtl="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="divyansh.billing.application.BillsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="divyansh.billing.application.SetupPasswordActivity"
+            android:label="@string/setup_password_activity_title" />
+
+        <provider
+            android:name="divyansh.billing.application.data.GSTBillingContentProvider"
+            android:authorities="divyansh.billing.application"
+            android:exported="false" />
+
+        <activity
+            android:name="divyansh.billing.application.NewBillActivity"
+            android:label="@string/new_bill_activity_title" />
+        <activity
+            android:name="divyansh.billing.application.NewBillCustomerActivity"
+            android:label="@string/new_bill_customer_activity_title" />
+        <activity android:name="divyansh.billing.application.DetailActivity" />
+        <activity android:name="divyansh.billing.application.SavePDFActivity"></activity>
+    </application>
+
+</manifest>
